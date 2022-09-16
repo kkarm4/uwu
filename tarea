@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 /*Un usuario ingrese una contraseña propuesta y se le indique si incumple con tener:
 Al menos 1 minúscula.
 Al menos 1 mayúscula.
@@ -43,9 +44,10 @@ char * buscarSim (char * sim) {
     return NULL ;
 }
 char * buscarCant (char * sim) {
-    while (*sim != '\0' ) {
-        if (*sim>33&&*sim<47 ) return sim ;
+    while (*sim !='\0' ) {
+        if(strlen(sim)>=8) return sim ;
         sim ++ ;
+
     }
     // Si llegamos aquí es porque no supera los 8 caracteres
 
@@ -53,43 +55,52 @@ char * buscarCant (char * sim) {
 }
 int main ( ) {
 
-    char cad [ 20 ] = "hoLA19-"; //FALTA SCANF
+    char cad [ 20 ] = "hoLA19"; //FALTA SCANF
     char * dirmi = buscarMinus (cad) ;
     char * dirma = buscarMayus (cad) ;
     char * dirnum = buscarNums (cad) ;
     char * dirsim = buscarSim (cad) ;
-    char * dirsim = buscarCant (cad) ;
+    char * dircant = buscarCant (cad) ;
 
 
 
 
     if ( dirmi == NULL ) { // Un verdadero indicaría que no se encontró el caracter en la cadena
-        printf ( " No SE ENCOTRO UNA MINUSCULA ") ;
+        printf ( " No SE ENCOTRO UNA MINUSCULA \n") ;
     }
 
    else {
         printf ( " Minuscula encontrada. \n ") ;
    }
    if ( dirma == NULL ) {
-        printf ( " No SE ENCOTRO UNA MAYUSCULA ") ;
+        printf ( " No SE ENCOTRO UNA MAYUSCULA \n") ;
     }
 
    else {
         printf ( " MAYUSCULA encontrada. \n ") ;
    }
    if ( dirnum == NULL ) {
-        printf ( " No SE ENCOTRO UN NUMERO ") ;
+        printf ( " No SE ENCOTRO UN NUMERO \n ") ;
     }
 
    else {
         printf ( " NUMERO encontrado. \n ") ;
    }
    if ( dirsim == NULL ) {
-        printf ( " No SE ENCOTRO UN Simbolo ") ;
+        printf ( " No SE ENCOTRO UN Simbolo \n ") ;
     }
 
    else {
         printf ( " SIMBOLO encontrado. \n ") ;
+   }
+   if ( dircant == NULL ) {
+        printf ( " No SE ENCOTRaron mas de 8 caracteres \n ") ;
+        printf("Length of string a = %zu \n",strlen(dircant));
+    }
+
+   else {
+        printf ( " cantidad de caracteres optima. \n ") ;
+        printf("Length of string a = %zu \n",strlen(dircant));
    }
 
    return 0;
