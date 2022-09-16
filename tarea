@@ -54,8 +54,12 @@ char * buscarCant (char * sim) {
     return NULL ;
 }
 int main ( ) {
+    char cad[20];
+    scanf("%s",cad);
 
-    char cad [ 20 ] = "hoLA19"; //FALTA SCANF
+
+    //char cad [ 20 ] = "hoLA19"; //FALTA SCANF
+
     char * dirmi = buscarMinus (cad) ;
     char * dirma = buscarMayus (cad) ;
     char * dirnum = buscarNums (cad) ;
@@ -95,13 +99,14 @@ int main ( ) {
    }
    if ( dircant == NULL ) {
         printf ( " No SE ENCOTRaron mas de 8 caracteres \n ") ;
-        printf("Length of string a = %zu \n",strlen(dircant));
+        printf("Tamaño de string = %zu \n",strlen(dircant));
     }
 
    else {
         printf ( " cantidad de caracteres optima. \n ") ;
-        printf("Length of string a = %zu \n",strlen(dircant));
+        printf("Tamaño de string = %zu \n",strlen(dircant));
    }
 
    return 0;
     }
+
