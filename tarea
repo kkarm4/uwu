@@ -1,0 +1,96 @@
+#include <stdio.h>
+/*Un usuario ingrese una contraseña propuesta y se le indique si incumple con tener:
+Al menos 1 minúscula.
+Al menos 1 mayúscula.
+Al menos 1 carácter que sea número.
+Al menos 1 carácter que no sea ni letra ni número.
+Al menos tener 8 caracteres.
+*/
+char * buscarMinus (char * min) {
+    while (*min != '\0' ) {
+        if (*min>=97&&*min<=122 ) return min ;
+        min ++ ;
+    }
+    // Si llegamos aquí es porque no encontramos una minuscula en la cadena
+
+    return NULL ;
+}
+char * buscarMayus (char * may) {
+    while (*may != '\0' ) {
+        if (*may<=90&&*may>=65 ) return may ;
+        may ++ ;
+    }
+    // Si llegamos aquí es porque no encontramos una Mayuscula en la cadena
+
+    return NULL ;
+}
+char * buscarNums (char * num) {
+    while (*num != '\0' ) {
+        if (*num>=48&&*num<=57 ) return num ;
+        num ++ ;
+    }
+    // Si llegamos aquí es porque no encontramos un Numero en la cadena
+
+    return NULL ;
+}
+char * buscarSim (char * sim) {
+    while (*sim != '\0' ) {
+        if (*sim>33&&*sim<47 ) return sim ;
+        sim ++ ;
+    }
+    // Si llegamos aquí es porque no encontramos un simbolo en la cadena
+
+    return NULL ;
+}
+char * buscarCant (char * sim) {
+    while (*sim != '\0' ) {
+        if (*sim>33&&*sim<47 ) return sim ;
+        sim ++ ;
+    }
+    // Si llegamos aquí es porque no supera los 8 caracteres
+
+    return NULL ;
+}
+int main ( ) {
+
+    char cad [ 20 ] = "hoLA19-"; //FALTA SCANF
+    char * dirmi = buscarMinus (cad) ;
+    char * dirma = buscarMayus (cad) ;
+    char * dirnum = buscarNums (cad) ;
+    char * dirsim = buscarSim (cad) ;
+    //char * dirsim = buscarCant (cad) ;
+
+
+
+
+    if ( dirmi == NULL ) { // Un verdadero indicaría que no se encontró el caracter en la cadena
+        printf ( " No SE ENCOTRO UNA MINUSCULA ") ;
+    }
+
+   else {
+        printf ( " Minuscula encontrada. \n ") ;
+   }
+   if ( dirma == NULL ) {
+        printf ( " No SE ENCOTRO UNA MAYUSCULA ") ;
+    }
+
+   else {
+        printf ( " MAYUSCULA encontrada. \n ") ;
+   }
+   if ( dirnum == NULL ) {
+        printf ( " No SE ENCOTRO UN NUMERO ") ;
+    }
+
+   else {
+        printf ( " NUMERO encontrado. \n ") ;
+   }
+   if ( dirsim == NULL ) {
+        printf ( " No SE ENCOTRO UN Simbolo ") ;
+    }
+
+   else {
+        printf ( " SIMBOLO encontrado. \n ") ;
+   }
+
+   return 0;
+    }
