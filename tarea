@@ -58,7 +58,7 @@ int main ( ) {
     char * dirma = buscarMayus (cad) ;
     char * dirnum = buscarNums (cad) ;
     char * dirsim = buscarSim (cad) ;
-    //char * dirsim = buscarCant (cad) ;
+    char * dirsim = buscarCant (cad) ;
 
 
 
